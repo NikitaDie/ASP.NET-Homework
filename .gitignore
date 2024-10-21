@@ -1,5 +1,62 @@
-bin/
-obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+# Rider specific files
+.idea/
+.idea/*
+
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider specific configuration files
+.idea/
+
+# Log files
+*.log
+
+# Dotnet Core specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Environment variables
+.env
+
+# Package manager directories
+node_modules/
+wwwroot/lib/
+lib/
+
+# Published outputs
+publish/
+out/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Workspace directories
+.vscode/
+.resharper/
+.ReSharper*/
+**/local.history/
+
+# JetBrains specific files
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.pid
+*.swp
+
+# Rider platform-specific files
+*.iml

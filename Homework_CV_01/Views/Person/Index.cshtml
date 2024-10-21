@@ -1,0 +1,64 @@
+﻿@model Homework_CV_01.Models.Person
+
+<head>
+    <title>Mini Resume</title>
+</head>
+<body>
+     <div class="container mt-5">
+         <div class="card">
+             <div class="row no-gutters">
+                 <div class="col-md-4">
+                     <img src="@Model.PhotoUrl" class="card-img img-thumbnail m-2" alt="Photo of @Model.Name" />
+                     <div class="social-media text-center">
+                         <h5>Connect with me:</h5>
+                         <ul class="list-inline">
+                             @if (Model.SocialMedia.TryGetValue("GitHub", out var githubUrl))
+                             {
+                                 <li class="list-inline-item">
+                                     <a href="@githubUrl" class="btn btn-outline-dark" target="_blank">
+                                         <i class="fab fa-github"></i> GitHub
+                                     </a>
+                                 </li>
+                             }
+                             
+                             @if (Model.SocialMedia.TryGetValue("LinkedIn", out var linkedInUrl))
+                             {
+                                 <li class="list-inline-item">
+                                     <a href="@linkedInUrl" class="btn btn-outline-primary" target="_blank">
+                                         <i class="fab fa-linkedin"></i> LinkedIn
+                                     </a>
+                                 </li>
+                             }
+                         </ul>
+                     </div>
+                 </div>
+                 <div class="col-md-8">
+                     <div class="card-body">
+                         <h2 class="card-title">@Model.Name</h2>
+                         <p class="card-text">
+                             <strong>Age:</strong> @Model.Age <br />
+                             <strong>Profession:</strong> @Model.Profession
+                         </p>
+                         <p class="card-text"><strong>Summary:</strong> @Model.Summary</p>
+                         
+                         <h4>Soft Skills</h4>
+                         <ul class="list-group list-group-flush mb-3">
+                             @foreach (var skill in Model.Softskills)
+                             {
+                                 <li class="list-group-item">@skill</li>
+                             }
+                         </ul>
+                         
+                         <h4>Technical Skills</h4>
+                         <ul class="list-group list-group-flush">
+                             @foreach (var skill in Model.Techskills)
+                             {
+                                 <li class="list-group-item">@skill</li>
+                             }
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>
