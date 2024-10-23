@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Food>
+
+<h1>Список страв</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Назва страви</th>
+        <th>Вага (г)</th>
+        <th>Ціна (грн)</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var food in Model)
+    {
+        <tr>
+            <td>@food.Name</td>
+            <td>@food.Weight</td>
+            <td>@($"{food.Price:C}")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="AddFood" class="btn btn-primary">Додати нову страву</a>

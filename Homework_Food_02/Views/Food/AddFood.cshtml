@@ -1,0 +1,23 @@
+﻿@model Food
+
+<h2>Додати нову страву</h2>
+
+<form asp-action="AddFood" method="post">
+    <div class="form-group">
+        <label for="Name">Назва страви</label>
+        <input type="text" class="form-control" id="Name" asp-for="Name" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Weight">Вага (г)</label>
+        <input type="number" class="form-control" id="Weight" asp-for="Weight" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Ціна (грн)</label>
+        <input type="number" class="form-control" id="Price" asp-for="Price" step="0.01" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Додати страву</button>
+    <a asp-action="Index" class="btn btn-secondary">Повернутися до списку</a>
+</form>
