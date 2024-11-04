@@ -1,0 +1,16 @@
+﻿services:
+  homework_crud_generation_05:
+    image: homework_crud_generation_05
+    build:
+      context: .
+      dockerfile: Homework_CRUD_Generation_05/Dockerfile
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=StrongPass123!
+      - MSSQL_DB=Homework_CRUD_Generation_05Context-9f83d759-8ae2-4347-a0f1-93efbb38a54d
+    ports:
+      - "1433:1433"  # Maps SQL Server's port 1433 to the host
+  
