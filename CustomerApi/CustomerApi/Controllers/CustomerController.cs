@@ -2,7 +2,7 @@
 using CustomerApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CustomerApi;
+namespace CustomerApi.Controllers;
 
 [ApiController]
 [Route("api/customers")]
